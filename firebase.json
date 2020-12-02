@@ -1,23 +1,37 @@
 {
   "hosting": {
     "public": "public",
-    "headers": [
-      {
+    "headers": [{
         "source": "/**",
-        "headers": [
-          {
-            "key": "Cache-Control",
-            "value": "no-cache, no-store, must-revalidate"
-          }
-        ]
+        "headers": [{
+          "key": "Cache-Control",
+          "value": "no-cache, no-store, must-revalidate"
+        }]
       },
       {
-        "source":
-          "**/*.@(jpg|jpeg|gif|png|svg|webp|js|css|eot|otf|ttf|ttc|woff|woff2|font.css)",
-        "headers": [
+        "source": "**/*.@(jpg|jpeg|gif|png|svg|webp|js|css|eot|otf|ttf|ttc|woff|woff2|font.css)",
+        "headers": [{
+          "key": "Cache-Control",
+          "value": "max-age=604800"
+        }]
+      },
+      {
+        "source": "**",
+        "headers": [{
+            "key": "Access-Control-Allow-Origin",
+            "value": "*"
+          },
           {
-            "key": "Cache-Control",
-            "value": "max-age=604800"
+            "key": "X-Frame-Options",
+            "value": "deny"
+          },
+          {
+            "key": "X-Content-Type-Options",
+            "value": "nosniff"
+          },
+          {
+            "key": "X-XSS-Protection",
+            "value": "1; mode=block"
           }
         ]
       }
