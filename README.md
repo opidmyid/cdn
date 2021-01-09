@@ -1,2 +1,2 @@
 # cdn
-https://cdn.opid.my.id
+https://cdn.opid.my.id 
